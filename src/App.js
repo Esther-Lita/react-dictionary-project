@@ -4,14 +4,11 @@ import "./App.css";
 
 function App() {
   return (
-    <div className="flex flex-col items-center min-h-screen bg-indigo-50 ">
+    <div className="flex flex-col items-center min-h-screen bg-gray-50 ">
       <header>
-        <h1 className="text-5xl font-bold text-center text-gray-900">
-          {" "}
-          WELCOME
-        </h1>
+        <h1 className="font-serif font-bold text-gray-900 text-9xl"> 📖</h1>
       </header>
-      <Dictionary />
+      <Dictionary keyword={"dog"} />
       <footer className="text-center">Coded by Esthel Lizardo</footer>
     </div>
   );
