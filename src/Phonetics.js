@@ -1,7 +1,6 @@
 import React from "react";
 
 export default function Phonetics(props) {
-  
   if (props.phonetic.audio) {
     return (
       <div className="mb-6">
@@ -13,7 +12,9 @@ export default function Phonetics(props) {
         >
           <span className=""> 🔊</span>
         </a>
-        <span className="ml-6 text-sky-700">{props.phonetic.text} </span>
+        <span className="ml-6 text-sm text-sky-700 sm:text-base">
+          {props.phonetic.text}{" "}
+        </span>
       </div>
     );
   } else {

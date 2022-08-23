@@ -48,7 +48,7 @@ export default function Dictionary(props) {
   if (loaded) {
     return (
       <div>
-        <section className="max-w-5xl py-6 mt-2 bg-white rounded-lg shadow-sm shadow-sky-100">
+        <section className="max-w-md py-6 mt-2 bg-white rounded-lg shadow-sm sm:max-w-5xl shadow-sky-100">
           <div className="m-10 ">
             <h2 className="hidden mb-3 text-2xl text-gray-700 sm:block">
               What word would you like to understand better?
@@ -56,12 +56,15 @@ export default function Dictionary(props) {
             <h2 className="block mb-1 text-xl text-gray-700 sm:hidden">
               Search for a word...
             </h2>
-            <form onSubmit={handleSubmit} className="flex rounded w-4xl ">
+            <form
+              onSubmit={handleSubmit}
+              className="flex rounded w-md sm:max-w-4xl"
+            >
               <input
                 type="text"
                 name="search"
                 placeholder={keyword}
-                className="w-full px-6 py-2 text-gray-500 bg-transparent border-2 rounded-md shadow-sm outline-gray-300 focus:outline-sky-200 "
+                className="px-6 py-2 text-gray-500 bg-transparent border-2 rounded-md shadow-sm sm:w-full outline-gray-300 focus:outline-sky-200 "
                 onChange={handleChange}
               />
             </form>

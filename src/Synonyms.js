@@ -9,9 +9,9 @@ export default function Synonyms(props) {
             return (
               <li
                 key={index}
-                className="inline-block mx-3 my-2 text-gray-600 capitaliz"
+                className="inline-block mx-2 text-sm text-gray-600 capitalize sm:my-2 sm:mx-3 sm:text-base"
               >
-                {synonym}
+                " {synonym}"
               </li>
             );
           })}

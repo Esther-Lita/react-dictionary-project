@@ -10,7 +10,7 @@ export default function Results(props) {
         <div className="max-w-5xl px-12 py-6 mt-2 bg-white rounded-lg shadow-sm shadow-sky-100">
           <div className="grid grid-cols-2">
             <div className="m-auto">
-              <h2 className="mb-6 text-5xl capitalize text-bold">
+              <h2 className="mb-6 text-3xl capitalize sm:text-5xl text-bold">
                 {props.info.word}
               </h2>
 
@@ -22,7 +22,7 @@ export default function Results(props) {
                 );
               })}
             </div>
-            <div className="">
+            <div className="m-auto">
               <Photos image={props.image} />
             </div>
           </div>
