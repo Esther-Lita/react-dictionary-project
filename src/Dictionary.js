@@ -7,15 +7,28 @@ export default function Dictionary(props) {
   const [keyword, setKeyword] = useState(props.keyword);
   const [results, setResults] = useState(null);
   const [loaded, setLoaded] = useState(false);
+  const [image, setImage] = useState(null);
 
-  function handleResponse(response) {
+  function handleDictionaryResponse(response) {
     //response.data[0].meanings[0].definitions[0]; How to find the definitions.
     setResults(response.data[0]);
   }
 
+  function handlePhotos(response) {
+    setImage(response.data.photos);
+    console.log(response.data.next_page);
+  }
+
   function search() {
     let apiUrl = `https://api.dictionaryapi.dev/api/v2/entries/en/${keyword}`;
-    axios.get(apiUrl).then(handleResponse);
+    axios.get(apiUrl).then(handleDictionaryResponse);
+
+    const pexelsApiKey =
+      "563492ad6f91700001000001ff7b4703df91441d82fb507892f3dc34";
+
+    const pexelsApiUrl = `https://api.pexels.com/v1/search?query=${keyword}&per_page=9`;
+    let headers = { Authorization: `Bearer ${pexelsApiKey}` };
+    axios.get(pexelsApiUrl, { headers: headers }).then(handlePhotos);
   }
 
   function handleSubmit(event) {
@@ -35,10 +48,13 @@ export default function Dictionary(props) {
   if (loaded) {
     return (
       <div>
-        <section className="max-w-5xl py-6 mt-2 bg-white rounded-lg shadow-sm shadow-indigo-100">
-          <div className="px-2 py-3 mx-52">
-            <h2 className="mb-3 text-2xl text-gray-700 ">
+        <section className="max-w-5xl py-6 mt-2 bg-white rounded-lg shadow-sm shadow-sky-100">
+          <div className="m-10 ">
+            <h2 className="hidden mb-3 text-2xl text-gray-700 sm:block">
               What word would you like to understand better?
+            </h2>
+            <h2 className="block mb-1 text-xl text-gray-700 sm:hidden">
+              Search for a word...
             </h2>
             <form onSubmit={handleSubmit} className="flex rounded w-4xl ">
               <input
@@ -55,7 +71,7 @@ export default function Dictionary(props) {
             </div>
           </div>
         </section>
-        <Results info={results} />
+        <Results info={results} image={image} />
       </div>
     );
   } else {

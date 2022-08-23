@@ -4,12 +4,17 @@ import "./App.css";
 
 function App() {
   return (
-    <div className="flex flex-col items-center min-h-screen bg-gray-50 ">
-      <header>
-        <h1 className="font-serif font-bold text-gray-900 text-9xl"> 📖</h1>
-      </header>
-      <Dictionary keyword={"dog"} />
-      <footer className="text-center">Coded by Esthel Lizardo</footer>
+    <div className="min-h-screen bg-gray-50">
+      <div className="container flex flex-col items-center max-w-4xl m-auto bg-gray-50">
+        <header>
+          <h1 className="font-serif font-bold text-gray-900 text-9xl"> 📖</h1>
+        </header>
+
+        <Dictionary keyword={"dog"} />
+      </div>
+      <footer className="w-full py-20 mt-5 text-center bg-black">
+        Coded by Esthel Lizardo
+      </footer>
     </div>
   );
 }
