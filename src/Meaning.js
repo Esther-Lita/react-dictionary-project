@@ -7,8 +7,8 @@ export default function Meaning(props) {
 
   return (
     <div>
-      <div className="max-w-5xl px-12 py-6 mt-2 bg-white rounded-lg shadow-sm shadow-sky-100">
-        <h4 className="text-xl text-gray-900 capitalize sm:text-3xl">
+      <div className="max-w-5xl px-12 py-6 mt-2 bg-white rounded-lg shadow-sm shadow-gray-100">
+        <h4 className="font-serif text-xl text-gray-900 capitalize sm:text-3xl">
           {props.meaning.partOfSpeech}
         </h4>
         {props.meaning.definitions.map(function (definition, index) {

@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 
+import SearchBtn from "./SearchBtn.js";
 import Results from "./Results";
 
 export default function Dictionary(props) {
@@ -16,7 +17,6 @@ export default function Dictionary(props) {
 
   function handlePhotos(response) {
     setImage(response.data.photos);
-    console.log(response.data.next_page);
   }
 
   function search() {
@@ -48,13 +48,14 @@ export default function Dictionary(props) {
   if (loaded) {
     return (
       <div>
-        <section className="max-w-md py-6 mt-2 bg-white rounded-lg shadow-sm sm:max-w-5xl shadow-sky-100">
-          <div className="m-10 ">
+        <section className="max-w-md py-6 mt-2 bg-white rounded-lg shadow-sm sm:max-w-5xl shadow-gray-100">
+          <SearchBtn />
+          <div className="m-10 " id="Search">
             <h2 className="hidden mb-3 text-2xl text-gray-700 sm:block">
-              What word would you like to understand better?
+              What would you like to understand better?
             </h2>
             <h2 className="block mb-1 text-xl text-gray-700 sm:hidden">
-              Search for a word...
+              Search for a word...🔍
             </h2>
             <form
               onSubmit={handleSubmit}
@@ -74,6 +75,7 @@ export default function Dictionary(props) {
             </div>
           </div>
         </section>
+
         <Results info={results} image={image} />
       </div>
     );
