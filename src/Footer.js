@@ -4,7 +4,7 @@ import * as Icon from "react-feather";
 
 export default function Footer() {
   return (
-    <footer className="w-full py-12 bg-gray-100">
+    <footer className="w-screen py-12 bg-gray-100">
       <div className="grid grid-cols-2 mb-6">
         <div className="text-center ">
           <h2 className="mb-1 text-xl sm:text-4xl sm:mb-3">📧 Contact me</h2>

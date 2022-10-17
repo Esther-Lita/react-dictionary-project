@@ -26,7 +26,7 @@ export default function Dictionary(props) {
     const pexelsApiKey =
       "563492ad6f91700001000001ff7b4703df91441d82fb507892f3dc34";
 
-    const pexelsApiUrl = `https://api.pexels.com/v1/search?query=${keyword}&per_page=9`;
+    const pexelsApiUrl = `https://api.pexels.com/v1/search?query=${keyword}&per_page=8`;
     let headers = { Authorization: `Bearer ${pexelsApiKey}` };
     axios.get(pexelsApiUrl, { headers: headers }).then(handlePhotos);
   }
@@ -48,7 +48,7 @@ export default function Dictionary(props) {
   if (loaded) {
     return (
       <div>
-        <section className="max-w-md py-6 mt-2 bg-white rounded-lg shadow-sm sm:max-w-5xl shadow-gray-100">
+        <section className="max-w-5xl py-6 mt-2 bg-white rounded-lg shadow-sm shadow-gray-100">
           <SearchBtn />
           <div className="m-10 " id="Search">
             <h2 className="hidden mb-3 text-2xl text-gray-700 sm:block">
